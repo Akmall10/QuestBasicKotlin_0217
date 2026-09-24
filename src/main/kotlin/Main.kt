@@ -1,39 +1,31 @@
+// Functions
+fun sum(x: Int, y: Int): Int {
+    return x + y
+}
+
+fun printMessageWithPrefix(message: String, prefix: String = "Info") {
+    println("[$prefix] $message")
+}
+
+fun printMessage(message: String) {
+    println(message)
+}
+
+fun uppercaseString(string: String): String {
+    return string.uppercase()
+}
+
 fun main() {
     val customers = 10
     println("There are $customers customers")
 
-    // Tipe Data Dasar
-    val dVar: Int
-    dVar = 3
-    val eStr: String = "hello"
-    println("d = $dVar, e = $eStr")
+    println("Sum result: ${sum(1, 2)}")
+    printMessageWithPrefix(prefix = "Log", message = "Hello")
+    printMessageWithPrefix("Hello", "Log")
+    printMessageWithPrefix("Hello")
+    printMessage("Hello Unit")
 
-    // Collection (List, Set, Map)
-    val readOnlyShapes = listOf("triangle", "square", "circle")
-    println("readOnlyShapes: $readOnlyShapes")
-
-    // Conditional expressions (If, When)
-    val check = true
-    val conditionalVal = if (check) 1 else 2
-    println("Conditional Int (if): $conditionalVal")
-
-    // Loops & Ranges
-    println("For loop 1..5:")
-    for (number in 1..5) {
-        print("$number ")
-    }
-    println()
-
-    println("For loop downTo and step:")
-    for (i in 5 downTo 1 step 2) {
-        print("$i ")
-    }
-    println()
-
-    var count = 3
-    println("While loop:")
-    while (count > 0) {
-        println("Count: $count")
-        count--
-    }
+    // Lambda expressions
+    println(uppercaseString("hello"))
+    println({ string: String -> string.uppercase() }("hello"))
 }
