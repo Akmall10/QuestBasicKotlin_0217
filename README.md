@@ -13,5 +13,6 @@ Proyek ini memiliki riwayat commit yang mendokumentasikan setiap sub-bab materi 
 7. `Class` (Properties, member functions, data classes)
 8. `Null safety` (Nullable types, safe calls, Elvis operator)
 
-## 👤 Informasi Mahasiswa
-- **NIM:** 0217
+SCREENSHOOT HASIL
+<img width="1916" height="1078" alt="image" src="https://github.com/user-attachments/assets/85130441-e592-4ebe-8dfb-c06b7667be93" />
+
