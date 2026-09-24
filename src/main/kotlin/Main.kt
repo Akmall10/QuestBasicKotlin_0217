@@ -1,31 +1,27 @@
-// Class
-class Customer
+fun strLength(notNull: String): Int {
+    return notNull.length
+}
 
-class Contact(val id: Int, var email: String) {
-    fun printId() {
-        println("Contact ID: $id")
+fun describeString(maybeString: String?): String {
+    if (maybeString != null && maybeString.length > 0) {
+        return "String of length ${maybeString.length}"
+    } else {
+        return "Empty or null string"
     }
 }
 
-// Data classes
-data class User(val name: String, val id: Int)
+fun lengthString(maybeString: String?): Int? = maybeString?.length
 
 fun main() {
-    val contact = Contact(1, "mary@gmail.com")
-    contact.printId()
-    println("Initial email: ${contact.email}")
-    contact.email = "jane@gmail.com"
-    println("Updated email: ${contact.email}")
+    // Null safety
+    var neverNull: String = "This can't be null"
+    var nullable: String? = "You can keep a null here"
+    nullable = null
 
-    val user = User("Alex", 1)
-    val secondUser = User("Alex", 1)
-    val thirdUser = User("Max", 2)
+    println("neverNull length: ${strLength(neverNull)}")
 
-    println("User toString: $user")
-    println("user == secondUser: ${user == secondUser}")
-    println("user == thirdUser: ${user == thirdUser}")
-
-    println("Copy exact: ${user.copy()}")
-    println("Copy name Max: ${user.copy("Max")}")
-    println("Copy id 3: ${user.copy(id = 3)}")
+    var nullString: String? = null
+    println(describeString(nullString))
+    println("lengthString result: ${lengthString(nullString)}")
+    println("Elvis operator result: ${nullString?.length ?: 0}")
 }
