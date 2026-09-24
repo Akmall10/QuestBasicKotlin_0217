@@ -1,31 +1,31 @@
-// Functions
-fun sum(x: Int, y: Int): Int {
-    return x + y
+// Class
+class Customer
+
+class Contact(val id: Int, var email: String) {
+    fun printId() {
+        println("Contact ID: $id")
+    }
 }
 
-fun printMessageWithPrefix(message: String, prefix: String = "Info") {
-    println("[$prefix] $message")
-}
-
-fun printMessage(message: String) {
-    println(message)
-}
-
-fun uppercaseString(string: String): String {
-    return string.uppercase()
-}
+// Data classes
+data class User(val name: String, val id: Int)
 
 fun main() {
-    val customers = 10
-    println("There are $customers customers")
+    val contact = Contact(1, "mary@gmail.com")
+    contact.printId()
+    println("Initial email: ${contact.email}")
+    contact.email = "jane@gmail.com"
+    println("Updated email: ${contact.email}")
 
-    println("Sum result: ${sum(1, 2)}")
-    printMessageWithPrefix(prefix = "Log", message = "Hello")
-    printMessageWithPrefix("Hello", "Log")
-    printMessageWithPrefix("Hello")
-    printMessage("Hello Unit")
+    val user = User("Alex", 1)
+    val secondUser = User("Alex", 1)
+    val thirdUser = User("Max", 2)
 
-    // Lambda expressions
-    println(uppercaseString("hello"))
-    println({ string: String -> string.uppercase() }("hello"))
+    println("User toString: $user")
+    println("user == secondUser: ${user == secondUser}")
+    println("user == thirdUser: ${user == thirdUser}")
+
+    println("Copy exact: ${user.copy()}")
+    println("Copy name Max: ${user.copy("Max")}")
+    println("Copy id 3: ${user.copy(id = 3)}")
 }
