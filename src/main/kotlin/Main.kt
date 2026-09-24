@@ -3,31 +3,39 @@ fun main() {
     println("There are $customers customers")
 
     // Tipe Data Dasar
-    val d: Int
-    d = 3
-    val e: String = "hello"
-    println("d = $d, e = $e")
+    val dVar: Int
+    dVar = 3
+    val eStr: String = "hello"
+    println("d = $dVar, e = $eStr")
 
     // Collection (List, Set, Map)
-    // List
     val readOnlyShapes = listOf("triangle", "square", "circle")
     println("readOnlyShapes: $readOnlyShapes")
     val shapes: MutableList<String> = mutableListOf("triangle", "square", "circle")
     shapes.add("rectangle")
     println("shapes mutable: $shapes")
 
-    // Set
-    val readOnlyFruit = setOf("apple", "banana", "cherry", "cherry")
-    println("readOnlyFruit: $readOnlyFruit")
-    val fruit: MutableSet<String> = mutableSetOf("apple", "banana", "cherry", "cherry")
-    fruit.add("orange")
-    println("fruit mutable: $fruit")
+    // Conditional expressions (If, When)
+    val check = true
+    val conditionalVal: Int
+    if (check) {
+        conditionalVal = 1
+    } else {
+        conditionalVal = 2
+    }
+    println("Conditional Int (if): $conditionalVal")
 
-    // Map
-    val readOnlyJuiceMenu = mapOf("apple" to 100, "kiwi" to 190, "orange" to 100)
-    println("readOnlyJuiceMenu: $readOnlyJuiceMenu")
-    println("The value of apple juice is: ${readOnlyJuiceMenu["apple"]}")
-    val juiceMenu: MutableMap<String, Int> = mutableMapOf("apple" to 100, "kiwi" to 190, "orange" to 100)
-    juiceMenu["grape"] = 150
-    println("juiceMenu mutable: $juiceMenu")
+    val obj = "Hello"
+    when (obj) {
+        "1" -> println("One")
+        "Hello" -> println("Greeting")
+        else -> println("Unknown")
+    }
+
+    val result = when (obj) {
+        "1" -> "One"
+        "Hello" -> "Greeting"
+        else -> "Unknown"
+    }
+    println("Conditional result (when): $result")
 }
