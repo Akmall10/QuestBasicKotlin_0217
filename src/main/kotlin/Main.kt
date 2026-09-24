@@ -11,31 +11,29 @@ fun main() {
     // Collection (List, Set, Map)
     val readOnlyShapes = listOf("triangle", "square", "circle")
     println("readOnlyShapes: $readOnlyShapes")
-    val shapes: MutableList<String> = mutableListOf("triangle", "square", "circle")
-    shapes.add("rectangle")
-    println("shapes mutable: $shapes")
 
     // Conditional expressions (If, When)
     val check = true
-    val conditionalVal: Int
-    if (check) {
-        conditionalVal = 1
-    } else {
-        conditionalVal = 2
-    }
+    val conditionalVal = if (check) 1 else 2
     println("Conditional Int (if): $conditionalVal")
 
-    val obj = "Hello"
-    when (obj) {
-        "1" -> println("One")
-        "Hello" -> println("Greeting")
-        else -> println("Unknown")
+    // Loops & Ranges
+    println("For loop 1..5:")
+    for (number in 1..5) {
+        print("$number ")
     }
+    println()
 
-    val result = when (obj) {
-        "1" -> "One"
-        "Hello" -> "Greeting"
-        else -> "Unknown"
+    println("For loop downTo and step:")
+    for (i in 5 downTo 1 step 2) {
+        print("$i ")
     }
-    println("Conditional result (when): $result")
+    println()
+
+    var count = 3
+    println("While loop:")
+    while (count > 0) {
+        println("Count: $count")
+        count--
+    }
 }
